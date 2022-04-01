@@ -1,4 +1,5 @@
-# Proyecto IoT del semillero Turing
+# Proyecto Gaia Red del semillero TuringBox - UNAL
+## Buscamos conectar el campo colombiano con las tecnologías 4.0, especialmente con el *internet of things*
 ## Datos generales
 
 Integrantes del proyecto:
