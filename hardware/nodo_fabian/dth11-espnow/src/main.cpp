@@ -5,7 +5,7 @@
 #include <esp_now.h>
 
 // reciever's mac address
-uint8_t broadcastAddress[]  = {0x78, 0xE3, 0x6D, 0x18, 0x7C, 0xF8};
+uint8_t broadcastAddress[]  = {0x08, 0x3A, 0xF2, 0x68, 0x02, 0x54};
 
 // Struct to send data
 typedef struct sensor{
@@ -96,5 +96,6 @@ void loop() {
 
   Serial.print("Temp(°C): ");
   Serial.println(temp);
+  Serial.println();
 
 }
