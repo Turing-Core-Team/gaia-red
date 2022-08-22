@@ -27,9 +27,6 @@
     
   }sensorFoto;
 
-  // create a struct message
-  //sensorDHT11 incomingDataSensor;
-
   // create a structure to hold readings from each boards
   sensorDHT11 dht11;// humedad/temperatura
   sensorHC hc;// distancia
@@ -49,39 +46,32 @@ void onDataRecv(const uint8_t * mac_addr, const uint8_t *incomingData, int len){
            mac_addr[0], mac_addr[1], mac_addr[2], mac_addr[3], mac_addr[4], mac_addr[5]);
   
   // compares the MAC address of the sender with the reciever, then selects a proper select
-  switch (macStr){
-  case hcAddress:
+  if(strcmp( macStr, hcAddress) == 0){  
     memcpy(&hc, incomingData, sizeof(hc));
     Serial.printf("ID: %d \n", hc.id);
     Serial.printf("Dist: %d cm \n", hc.dist);
-    break;
-  case dht11Address:
+  }else if(strcmp(macStr,dht11Address)==0){
     memcpy(&dht11, incomingData, sizeof(dht11));
     Serial.printf("ID: %d \n", dht11.id);
-    Serial.printf("Humedad: %.2f % \n", dht11.humidity);
+    Serial.printf("Humedad: %.2f \n", dht11.humidity);
     Serial.printf("Temperatura: %.2f °C \n", dht11.temperature);
-    break;
-  case fotoAddress:
+  }else if(strcmp(macStr,fotoAddress) == 0){
+  
     memcpy(&fotoRes, incomingData, sizeof(fotoRes));
     Serial.printf("ID: %d \n", fotoRes.id);
-    Serial.printf("on-off: %s % \n", fotoRes.on_off);
-
-  default:
+    Serial.printf("on-off: %s %% \n", fotoRes.on_off);
+  }else{
+  
     Serial.println("MAC address not available");
-    break;
+    
   }
   
 
 }
 
-
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(9600);
-
-  if(!driver.init()){
-    Serial.println("init failed...");
-  }
+  Serial.begin(115200);
 
   // set device as a wifi station
   WiFi.mode(WIFI_STA);

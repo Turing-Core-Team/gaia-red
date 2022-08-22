@@ -7,8 +7,7 @@ Integrantes del proyecto:
 * Cristian Fabian Lopez Medina
 * Maria Camila Pineros Martinez
 * Maria Paula Perez Vargas
-* Jose Fernando Quevedo
-* Andrés Eduardo Rubiano Martinez
+* Juan Manuel Cortes Jimenez
 * Santiago Andrés Acosta Parra
 
 **[Biblioteca-drive](https://drive.google.com/drive/folders/1PNXdVDubuhvfd8hPiqWIIwecvO1fES7n?usp=sharing) del grupo. Contiene principalmente artículos científicos de trabajos que han realizado proyecto similares.**
@@ -27,41 +26,16 @@ Este **árbol** muestra la estructura actual del proyecto.
 
 
 ```
-iot_turing/
+.
 ├── hardware
-│   ├── nodo_andres
-│   │   └── data.py
 │   ├── nodo_fabian
-│   │   └── dth11-espnow
-│   │       ├── include
-│   │       │   └── README
-│   │       ├── lib
-│   │       │   └── README
-│   │       ├── platformio.ini
-│   │       ├── src
-│   │       │   └── main.cpp
-│   │       └── test
-│   │           └── README
 │   ├── nodo_paula
-│   │   ├── esp32_base
-│   │   │   └── esp32_mac.ino
-│   │   ├── LecturaSensorArduino.ino
-│   │   ├── LecturaSensorEspNow.ino
-│   │   └── LecturaSensorMQTT.ino
 │   ├── nodo_santiago
-│   │   ├── Cod_1.ino
-│   │   └── esp32_base
-│   │       └── esp32_base.ino
 │   └── raspberry
-│       └── raspi.txt
 ├── README.md
 └── software
-    ├── backend
     └── frontend
-        ├── dashboard
-        │   └── angular.md
-        └── esp-server
-            └── vue.md
+
 ```
 Cada persona que trabaja en la parte de hardware tiene su carpeta, allí va a subir el código de su microcontrolador.
 
