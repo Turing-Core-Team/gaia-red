@@ -1,0 +1,9 @@
+-cosas pendientes por hacer:
+6/09
+
+-Poner las fotos, y descripciones del grup
+-cambiar el color degradado por #FAFAFA
+- mirar como hacer el scroll con window.location o window.scroll
+- hacer la pagina responsive
+- solucionar el problema de que el boton solo funciona si le das click al texto y no (boton inicial)
+

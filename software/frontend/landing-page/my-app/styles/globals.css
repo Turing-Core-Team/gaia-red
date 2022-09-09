@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap');
+@font-face {
+    font-family: 'avenirlight';
+    src: url("../public/Avenir\ Light.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*Primera fuente para los titulos*/
+
+html,
+body {
+    font-family: 'Work Sans', sans-serif;
+    width: 100%;
+    overflow-x: clip;
+    background-color: #FAFAFA;
+    scroll-behavior: smooth;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    /*box-sizing: border-box;*/
+}
+
+.fotospeque {
+    margin-left: 1%;
+}
+
+@media only screen and (max-width: 640px) {
+    body {
+        font-family: 'Work Sans', sans-serif;
+        width: 100%;
+        overflow-x: auto;
+        background-color: #FAFAFA;
+        scroll-behavior: smooth;
+        background-image: url("../public/fondo_inicio.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
+
+
+/*
+Espacio para las cosas responsive
+@media (prefers-color-scheme: dark) {
+    html {
+        color-scheme: dark;
+    }
+    body {
+        color: white;
+        background: black;
+    }
+}
+
+*/
