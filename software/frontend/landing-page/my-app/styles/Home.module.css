@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap');
 @font-face {
     font-family: 'avenirlight';
-    src: url("../public/Avenir\ Light.ttf");
+    src: url("/Avenir\ Light.ttf");
     font-weight: normal;
     font-style: normal;
 }
