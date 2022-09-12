@@ -311,7 +311,7 @@ tomada de: https://github.com/tbcodes/animate_background_css/blob/master/css_cod
     top: -10vh;
     position: relative;
     height: 100vh;
-    background-image: url("../public/fondo_inicio.png");
+    background-image: url("/fondo_inicio.png");
     background-size: cover;
     background-repeat: no-repeat;
 }
