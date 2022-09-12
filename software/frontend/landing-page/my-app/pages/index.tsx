@@ -98,7 +98,7 @@ const Home: NextPage = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image src="/../public/logo_un.png" alt="logo png" width={153} height={153} layout='fixed' />
+                <Image src="/logo_un.png" alt="logo png" width={153} height={153} layout='fixed' />
               </a>
               <a
                 href="http://bienestar.bogota.unal.edu.co/pgp/micrositio/Index.html"
