@@ -71,7 +71,7 @@ const Home: NextPage = () => {
                 por el internet de las cosas, los microcontroladores, y en darle una
                 oportunidad de modernización al campo colombiano. Con nuestro
                 proyecto buscamos mejorar la productividad de los cultivos al tiempo
-                que brindamos una solución tecnológica escalable.</p >
+                que brindamos una solución tecnológica.</p >
 
             </section>
           </article>
