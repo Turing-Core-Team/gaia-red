@@ -26,7 +26,7 @@ const Navbar = () => {
     return (
         <>
         <nav className={styles.navb}>
-                <Image src="/../public/logo_gaia.png" height={49} width={38} layout="fixed"></Image>
+                <Image src="/logo_gaia.png" height={49} width={38} layout="fixed"></Image>
                 <h3 className={styles.gaiaText}>Gaia Red</h3>
                 <button className={styles.navButtons} onClick={irInicio}>Inicio</button> 
                <button className={styles.navButtons} onClick={irEquipo}>Equipo</button>

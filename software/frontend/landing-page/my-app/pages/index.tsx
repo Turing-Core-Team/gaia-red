@@ -63,7 +63,7 @@ const Home: NextPage = () => {
             <h2 className={styles.SubtitulosDer} >Quiénes Somos</h2>
             <section className={styles.flexFoto}>
               <div><Image 
-              src="/../public/foto-gaia.jpg"  alt="equipo gaia-red" layout='fixed' height={200}   
+              src="/foto-gaia.jpg"  alt="equipo gaia-red" layout='fixed' height={200}   
               width={300}
               /></div>
 
@@ -80,11 +80,11 @@ const Home: NextPage = () => {
           <br></br>
           <h2 className={styles.SubtitulosC} >El equipo</h2>
           <section className={styles.gridEquipo}>
-            <Miembro {...["Fabian López", "Ingeniero Electronico", "/../public/miembro_ref.jpeg"]}></Miembro>
-            <Miembro {...["Maria Paula Perez", "Ingeniera Electronica", "/../public/miembro_ref.jpeg"]}></Miembro>
-            <Miembro {...["Juan Manuel Cortes", "Ingeniero de Sistemas", "/../public/miembro_ref.jpeg"]}></Miembro>
-            <Miembro {...["Santiago Acosta", "Ingeniero Electronico", "/../public/miembro_ref.jpeg"]}></Miembro>
-            <Miembro {...["Camila Piñeros", "Diseñadora Industrial", "/../public/miembro_ref.jpeg"]}></Miembro>
+            <Miembro {...["Fabian López", "Ingeniero Electronico", "/miembro_ref.jpeg"]}></Miembro>
+            <Miembro {...["Maria Paula Perez", "Ingeniera Electronica", "/miembro_ref.jpeg"]}></Miembro>
+            <Miembro {...["Juan Manuel Cortes", "Ingeniero de Sistemas", "/miembro_ref.jpeg"]}></Miembro>
+            <Miembro {...["Santiago Acosta", "Ingeniero Electronico", "/miembro_ref.jpeg"]}></Miembro>
+            <Miembro {...["Camila Piñeros", "Diseñadora Industrial", "/miembro_ref.jpeg"]}></Miembro>
 
           </section>
           <div id="Apoyo"></div>
@@ -98,14 +98,14 @@ const Home: NextPage = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image src="/../public/logo_un.png" alt="logo png" width={153} height={153} layout='fixed' />
+                <Image src="/logo_un.png" alt="logo png" width={153} height={153} layout='fixed' />
               </a>
               <a
                 href="http://bienestar.bogota.unal.edu.co/pgp/micrositio/Index.html"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image src="/../public/logo_pgp.png" alt="logo png" width={138} height={140} layout='fixed' />
+                <Image src="/logo_pgp.png" alt="logo png" width={138} height={140} layout='fixed' />
               </a>
               
 
