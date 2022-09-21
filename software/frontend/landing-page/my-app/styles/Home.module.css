@@ -610,7 +610,8 @@ tomada de: https://github.com/tbcodes/animate_background_css/blob/master/css_cod
     .Subtitulos {
         position: relative;
         margin-bottom: 1%;
-        margin-top: -15%;
+        margin-top: -25%;
+        /**/
     }
     .gridEquipo {
         display: flex;
