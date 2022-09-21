@@ -38,7 +38,7 @@ a {
         overflow-x: auto;
         background-color: #FAFAFA;
         scroll-behavior: smooth;
-        background-image: url("/fondo_inicio.png");
+        background-image: url("/principalMOVIL.png");
         background-size: contain;
         background-repeat: no-repeat;
     }
