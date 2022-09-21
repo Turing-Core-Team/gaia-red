@@ -607,6 +607,11 @@ tomada de: https://github.com/tbcodes/animate_background_css/blob/master/css_cod
         animation: menuVertical;
         animation-duration: 2s;
     }
+    .Subtitulos {
+        position: relative;
+        margin-bottom: 1%;
+        margin-top: -10%;
+    }
     .gridEquipo {
         display: flex;
         flex-direction: column;
