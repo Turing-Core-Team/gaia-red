@@ -48,9 +48,10 @@ const Home: NextPage = () => {
         </p>
 
         <Grid>
-          <Infodiv {...["01", "Monitoreo de cultivos en tiempo real", "El monitoreo en tiempo real ayuda a conocer el estado del cultivo y así saber lo que necesita para crecer."]} />
+          <Infodiv {...["01", "Monitoreo de cultivos  en tiempo real", "El monitoreo en tiempo real ayuda a conocer el estado del cultivo y así saber lo que necesita para crecer."]} />
           <Infodiv {...["02", "Revisión y control de riego", "El control de riego aporta la cantidad necesaria de agua en el momento que se necesita, humedeciendo el suelo hasta la profundidad que requiera el cultivo, con el fin de que este tenga un correcto desarrollo"]} />
           <Infodiv {...["03", "Mejoras en la calidad del cultivo", "A partir del monitoreo, la revisión de factores como el riego y el análisis de estos datos es posible lograr aumentar la calidad del cultivo, disminuyendo perdidas y añadiendo valor a la producción de alimentos en el país."]} />
+          <Infodiv {...["04", "Transmisión de datos de forma Inalámbrica", "Utilizando la tecnología LoRa y por medio de antenas que soportan el protocolo, con diversos microcontroladores se transmite la información recogida por los sensores hasta un punto geográfico con conexión a internet."]} />
           {/*<Infodiv {...["04","Monitoreo de cultivos en tiempo real","Explicación para inexpertos de como se genera la información"]}/>*/}
         </Grid>
         <div id="Quienes"></div>
@@ -62,10 +63,8 @@ const Home: NextPage = () => {
           <article className={styles.divfondoBlanco}>
             <h2 className={styles.SubtitulosDer} >Quiénes Somos</h2>
             <section className={styles.flexFoto}>
-              <div><Image 
-              src="/foto-gaia.jpg"  alt="equipo gaia-red" layout='fixed' height={200}   
-              width={300}
-              /></div>
+              <img
+              src="/foto-gaia.jpg"  alt="equipo gaia-red"  className={styles.imagenSomos}/>
 
               <p>Gaia Red es un grupo interdisciplinar de estudiantes apasionados
                 por el internet de las cosas, los microcontroladores, y en darle una
@@ -80,11 +79,11 @@ const Home: NextPage = () => {
           <br></br>
           <h2 className={styles.SubtitulosC} >El equipo</h2>
           <section className={styles.gridEquipo}>
-            <Miembro {...["Fabian López", "Ingeniero Electronico", "/miembro_ref.jpeg"]}></Miembro>
-            <Miembro {...["Maria Paula Perez", "Ingeniera Electronica", "/miembro_ref.jpeg"]}></Miembro>
-            <Miembro {...["Juan Manuel Cortes", "Ingeniero de Sistemas", "/miembro_ref.jpeg"]}></Miembro>
-            <Miembro {...["Santiago Acosta", "Ingeniero Electronico", "/miembro_ref.jpeg"]}></Miembro>
-            <Miembro {...["Camila Piñeros", "Diseñadora Industrial", "/miembro_ref.jpeg"]}></Miembro>
+            <Miembro {...["Fabian López", "Ingeniero Electronico", "/fabian.jpg"]}></Miembro>
+            <Miembro {...["Maria Paula Perez", "Ingeniera Electronica", "/paula.png"]}></Miembro>
+            <Miembro {...["Juan Manuel Cortes", "Ingeniero de Sistemas", "/juan.jpg"]}></Miembro>
+            <Miembro {...["Santiago Acosta", "Ingeniero Electronico", "/santiago.png"]}></Miembro>
+            <Miembro {...["Camila Piñeros", "Diseñadora Industrial", "/camila.png"]}></Miembro>
 
           </section>
           <div id="Apoyo"></div>
@@ -98,7 +97,7 @@ const Home: NextPage = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image src="/logo_un.png" alt="logo png" width={153} height={153} layout='fixed' />
+                <img src="/logo_un.png" alt="logo png" width={153} height={153} />
               </a>
               <a
                 href="http://bienestar.bogota.unal.edu.co/pgp/micrositio/Index.html"

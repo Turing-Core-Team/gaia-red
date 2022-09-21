@@ -9,7 +9,7 @@ const Miembro = (props:string[]) =>{
     let ruta:string = props[2];
     return (
         <article className={styles.ArtMiembro}>
-            <Image src={ruta} width={269} height={323} layout="fixed"></Image>
+            <img src={ruta} className={styles.imagenEquipo}></img>
             <span className={styles.nombreMiembro}>
                 <p>{nombre}</p> <p>{cargo}</p>
                  </span>
