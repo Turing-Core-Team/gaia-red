@@ -30,7 +30,7 @@ const Navbar = () => {
                 <h3 className={styles.gaiaText}>Gaia Red</h3>
                 <button className={styles.navButtons} onClick={irInicio}>Inicio</button> 
                <button className={styles.navButtons} onClick={irEquipo}>Equipo</button>
-               <button className={styles.navButtons} onClick={irQuienes}>Quienes somos</button>
+               <button className={styles.navButtons} onClick={irQuienes}>Quiénes somos</button>
                <button className={styles.navButtons} onClick={irApoyo}>Apoyos</button>
                <button className={styles.navButtons} onClick={irContacto}>Contacto</button>
 

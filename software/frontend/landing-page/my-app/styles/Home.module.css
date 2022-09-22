@@ -450,14 +450,56 @@ tomada de: https://github.com/tbcodes/animate_background_css/blob/master/css_cod
 }
 
 .navButtons:hover {
-    background-color: papayawhip;
+    background-color: #E7F1EB;
+}
+
+.navMobile {
+    /*border: 2px solid;*/
+    width: 40%;
+    top: 3%;
+    z-index: 3;
+    position: fixed;
+    height: fit-content;
+    padding-right: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: 45%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+}
+
+.navMobile>ul {
+    margin-right: 10%;
+    width: fit-content;
+    height: fit-content;
+    /* border: 2px solid;*/
+    position: relative;
+    list-style: none;
+    display: none;
+    /*Pendiente cambiar esto en responsive*/
+}
+
+.iconMenu {
+    width: 50px;
+    height: 50px;
+    margin-left: 70%;
+    background-image: url('/treslineas.png');
+    background-size: contain;
+    border: transparent;
+    background-color: transparent;
+}
+
+.iconMenu:hover {
+    background-color: #E7F1EB;
 }
 
 .footer {
     display: flex;
     flex: 1;
     padding: 2rem 0;
-    border-top: 1px solid #eaeaea;
+    border-top: 0.1px solid #eaf9f1;
     justify-content: center;
     align-items: center;
 }
@@ -598,6 +640,14 @@ tomada de: https://github.com/tbcodes/animate_background_css/blob/master/css_cod
     .navb {
         display: none;
     }
+    /*Version responsive*/
+    .navMobile {
+        display: flex;
+    }
+    .navMobile>ul {
+        display: none;
+        /*Pendiente cambiar esto en responsive*/
+    }
     .botonesInicio {
         left: 10%;
         font-size: medium;
@@ -669,7 +719,7 @@ tomada de: https://github.com/tbcodes/animate_background_css/blob/master/css_cod
     }
     .gridEquipo>.ArtMiembro:nth-child(5) {
         margin: auto;
-        margin-bottom: 10%;
+        margin-bottom: 30%;
     }
     .fotoFondo {
         /* background-image: url("../public/fondo_inicio.png");

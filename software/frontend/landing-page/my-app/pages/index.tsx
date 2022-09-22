@@ -9,6 +9,7 @@ import Grid from '../componentes/grid-inicio'
 import Link from 'next/link'
 import SectionInicio from '../componentes/section-inicio'
 import Miembro from '../componentes/miembro_equipo'
+import MobileNav from '../componentes/mobileNav'
 
 const Home: NextPage = () => {
 
@@ -26,7 +27,7 @@ const Home: NextPage = () => {
       {/*<Infodiv></Infodiv>*/}
       <div id="top"></div>
       <Navbar  ></Navbar>
-
+      <MobileNav></MobileNav>
       <main className={styles.main}>
         <Layout>
 
@@ -49,9 +50,9 @@ const Home: NextPage = () => {
 
         <Grid>
           <Infodiv {...["01", "Monitoreo de cultivos  en tiempo real", "El monitoreo en tiempo real ayuda a conocer el estado del cultivo y así saber lo que necesita para crecer."]} />
-          <Infodiv {...["02", "Revisión y control de riego", "El control de riego aporta la cantidad necesaria de agua en el momento que se necesita, humedeciendo el suelo hasta la profundidad que requiera el cultivo, con el fin de que este tenga un correcto desarrollo"]} />
+          <Infodiv {...["02", "Revisión y control de riego", "El control de riego aporta la cantidad necesaria de agua en el momento que se necesita, humedeciendo el suelo hasta la profundidad que requiera el cultivo, con el fin de que este tenga un correcto desarrollo."]} />
           <Infodiv {...["03", "Mejoras en la calidad del cultivo", "A partir del monitoreo, la revisión de factores como el riego y el análisis de estos datos es posible lograr aumentar la calidad del cultivo, disminuyendo perdidas y añadiendo valor a la producción de alimentos en el país."]} />
-          <Infodiv {...["04", "Transmisión de datos de forma Inalámbrica", "Utilizando la tecnología LoRa y por medio de antenas que soportan el protocolo, con diversos microcontroladores se transmite la información recogida por los sensores hasta un punto geográfico con conexión a internet."]} />
+          <Infodiv {...["04", "Transmisión de datos de forma Inalámbrica", "Utilizando la tecnología 'LoRa' y por medio de antenas que soportan el protocolo, con diversos microcontroladores se transmite la información recogida por los sensores hasta un punto geográfico con conexión a internet."]} />
           {/*<Infodiv {...["04","Monitoreo de cultivos en tiempo real","Explicación para inexpertos de como se genera la información"]}/>*/}
         </Grid>
         <div id="Quienes"></div>
@@ -66,8 +67,8 @@ const Home: NextPage = () => {
               <img
               src="/foto-gaia.jpg"  alt="equipo gaia-red"  className={styles.imagenSomos}/>
 
-              <p>Gaia Red es un grupo interdisciplinar de estudiantes apasionados
-                por el internet de las cosas, los microcontroladores, y en darle una
+              <p>Gaia Red es un grupo interdisciplinar de estudiantes interesados
+                en el internet de las cosas, los microcontroladores y en darle una
                 oportunidad de modernización al campo colombiano. Con nuestro
                 proyecto buscamos mejorar la productividad de los cultivos al tiempo
                 que brindamos una solución tecnológica.</p >
@@ -80,9 +81,9 @@ const Home: NextPage = () => {
           <h2 className={styles.SubtitulosC} >El equipo</h2>
           <section className={styles.gridEquipo}>
             <Miembro {...["Fabian López", "Ingeniero Electronico", "/fabian.jpg"]}></Miembro>
-            <Miembro {...["Maria Paula Perez", "Ingeniera Electronica", "/paula.png"]}></Miembro>
+            <Miembro {...["Maria Paula Perez", "Ingeniera Electrónica", "/paula.png"]}></Miembro>
             <Miembro {...["Juan Manuel Cortes", "Ingeniero de Sistemas", "/juan.jpg"]}></Miembro>
-            <Miembro {...["Santiago Acosta", "Ingeniero Electronico", "/santiago.png"]}></Miembro>
+            <Miembro {...["Santiago Acosta", "Ingeniero Electrónico", "/santiago.png"]}></Miembro>
             <Miembro {...["Camila Piñeros", "Diseñadora Industrial", "/camila.png"]}></Miembro>
 
           </section>
