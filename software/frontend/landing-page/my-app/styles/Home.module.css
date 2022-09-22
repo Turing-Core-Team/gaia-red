@@ -643,9 +643,37 @@ tomada de: https://github.com/tbcodes/animate_background_css/blob/master/css_cod
     /*Version responsive*/
     .navMobile {
         display: flex;
+        border-radius: 5%;
     }
-    .navMobile>ul {
+    .botonesMenu {
+        /*left: 10%;*/
+        font-size: 1em;
+        font-family: 'avenirlight', 'sans';
+        border-radius: 30px;
+        padding-right: 15%;
+        padding-left: 15%;
+        right: 25%;
+        margin-bottom: 10%;
+        position: relative;
+        font-weight: lighter;
+        color: black;
+        background-color: transparent;
+        border: 0px solid gray;
+        /*animation: menuVertical;*/
+        /*animation-duration: 2s;*/
+    }
+    .botonesMenu:hover {
+        background-color: #4F936E;
+        color: white;
+    }
+    .listaMobile {
+        background-color: #E7F1EB;
+        border-radius: 5%;
+        padding-left: 23%;
+        padding-right: 20%;
+        padding-top: 10%;
         display: none;
+        z-index: inherit;
         /*Pendiente cambiar esto en responsive*/
     }
     .botonesInicio {
