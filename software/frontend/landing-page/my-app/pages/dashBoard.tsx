@@ -53,13 +53,24 @@ const DashBoard = () => {
         datasets: [
             {
                 //para cada linea se crea un dataSet
-                label: 'My First dataset',
+                label: 'Temperatura',
                 
                 fill: false,
                 lineTension: 0.1,
                 backgroundColor: 'rgba(75,192,192,0.4)',
                 borderColor: 'rgba(75,192,192,1)',
                 data: [65, 59, 80, 81, 56, 55, 40]
+            },
+
+            {
+                //para cada linea se crea un dataSet
+                label: 'Humedad Relativa',
+                
+                fill: false,
+                lineTension: 0.1,
+                backgroundColor: 'rgb(250,128,114)',
+                borderColor: 'rgb(250,128,114)',
+                data: [25, 19, 60, 11, 26, 75, 20]
             }
         ]
     };
@@ -84,9 +95,9 @@ const DashBoard = () => {
                             <br></br>
                             <p className={styles.textoComunD}>Desde aquí podrás ver las principales métricas que nuestros sensores han recolectado</p>
                         </section>
-                        <img src={'/bogota.jpg'} className={styles.fotoControlador}></img>
+                      { /*  <img src={'/bogota.jpg'} className={styles.fotoControlador}></img> */}
                     </article>
-                    <br></br>
+                    
                     <section className={styles.flexRow}>
                         <Infodash {...['20 C°', '/temperature.png', "Temperatura (C°)", '1']}></Infodash>
                         <Infodash {...['40%', '/humedad.png', "H.Relativa (%)", '2']}></Infodash>
@@ -94,7 +105,7 @@ const DashBoard = () => {
                         <Infodash {...['ON', '/brillo.png', "Brillo (on/off)", '2']}></Infodash>
 
                     </section>
-                    <br></br>
+                    
                     <div className={styles.flexRow}>
                         <section className={styles.dashInfo} >
                             <h3 className={styles.SubtitulosD}>Gráficos asociados a los reportes</h3>
@@ -102,12 +113,12 @@ const DashBoard = () => {
                             <p className={styles.textoComunD}>Histograma, Humedad Relativa y temperatura en 24h</p>
                         </section>
                     </div>
-                    <br></br>
+                    
                     <section className={styles.flexRow}>
-                        <div className={styles.fotogGrafico}>
+                        <div className={styles.fotoGrafico}>
                             <Bar
                                 data={dataBarra}
-                                width='520px'
+                                width='400px'
                                 height='400px'
                                 options={{
                                     responsive: true,
@@ -118,8 +129,8 @@ const DashBoard = () => {
                         <div className={styles.fotoGrafico}>
                             <Line
                                 data={data}
-                                width={400}
-                                height={400}
+                                width='400px'
+                                height='400px'
                                 options={{
                                     responsive: true,
                                     maintainAspectRatio: false
