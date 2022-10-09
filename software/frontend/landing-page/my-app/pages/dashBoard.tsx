@@ -10,6 +10,7 @@ import { Line } from 'react-chartjs-2';
 import { CategoryScale } from "chart.js";
 import { defaults } from "chart.js";
 import MobileNav from "../componentes/mobileNav";
+import Link from "next/link";
 
 //esto se utiliza pq según entiendo al usar chart.js con react
 /*v4 of this library, just like Chart.js v3,
@@ -103,10 +104,11 @@ const DashBoard = () => {
                     <section className={styles.flexRow}>
                         <Infodash {...['20 C°', '/temperature.png', "Temperatura (C°)", '1']}></Infodash>
                         <Infodash {...['40%', '/humedad.png', "H.Relativa (%)", '2']}></Infodash>
-                        <Infodash {...['2cm', '/distancia.png', "Distancia (cm)", '1']}></Infodash>
-                        <Infodash {...['ON', '/brillo.png', "Brillo (on/off)", '2']}></Infodash>
+                        <Infodash {...['2cm', '/distancia.png', "Distancia (cm)", '3']}></Infodash>
+                        <Infodash {...['ON', '/brillo.png', "Brillo (on/off)", '4']}></Infodash>
 
                     </section>
+                    
                     
                     <div className={styles.flexRow}>
                         <section className={styles.dashInfo} >

@@ -7,7 +7,8 @@ const Infodash = (props: string[]) => {
     let numero = props[0];
     let titulo = props[1];
     let texto = props[2];
-    let stylo:number = Number(props[3]);
+    let reporte = props[3];
+   
 
     return (
         <>
@@ -18,7 +19,7 @@ const Infodash = (props: string[]) => {
                         <img className={styles.iconoDs} src={titulo}></img>
                         <h2>{numero}</h2>
                         <p>{texto}</p>
-                        <div className={styles.div_estilizado}>valor</div>
+                        <Link href={'reportes/'+reporte}><div className={styles.div_estilizado}>Detalles</div></Link>
                     </div>
                   
 
