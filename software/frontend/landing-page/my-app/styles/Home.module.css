@@ -36,7 +36,7 @@
 .gaiaText {
     color: #176038;
     font-size: 30px;
-    margin-right: 30%;
+    margin-right: 15%;
     left: 2%;
     position: relative;
 }
@@ -615,6 +615,137 @@ tomada de: https://github.com/tbcodes/animate_background_css/blob/master/css_cod
 .logo {
     height: 1em;
     margin-left: 0.5rem;
+}
+
+
+/*---------------------------Estilos usados para el dashboard--------------------*/
+
+
+/*Lamento persona que le toque organizar esto (si es que hay alguien)*/
+
+.cuadroResumen {
+    margin: auto;
+    position: relative;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    width: 90%;
+    padding: 1%;
+    border: 3px solid rgb(207, 204, 204);
+    height: 85%;
+    backdrop-filter: blur(10px);
+    border-radius: 1%;
+}
+
+.dashInfo {
+    display: flex;
+    margin-left: 2%;
+    margin-right: 2%;
+    flex-direction: column;
+    align-items: flex-start;
+    width: fit-content;
+    height: fit-content;
+    padding: 2%;
+    position: relative;
+    border: 2px solid;
+}
+
+.textoComunD {
+    font-size: 1em;
+    line-height: 1.5em;
+    font-family: 'avenirlight', 'sans-serif';
+    position: relative;
+    border: 2px solid;
+    margin-top: -5%;
+}
+
+.flexCol {
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+    padding: 2%;
+    flex-direction: column;
+    align-items: center;
+    border: solid 2px;
+    margin-left: -5%;
+    margin-right: auto;
+}
+
+.flexCol>p {
+    margin-top: -5%;
+    position: relative;
+    margin-left: right;
+    margin-right: 15%;
+    margin-bottom: 2%;
+    padding-right: 4%;
+}
+
+.flexCol>h2 {
+    margin-right: auto;
+    margin-top: 5%;
+    text-align: left;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+    padding: 2%;
+    height: fit-content;
+    width: 100%;
+    align-items: center;
+    margin-left: 12%;
+}
+
+.flexRow:nth-child(3)>div {
+    background-color: rgb(127, 161, 245);
+}
+
+.flexRow:nth-child(2n+1)>div {
+    background-color: papayawhip;
+}
+
+.iconoDs {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 2px solid;
+    margin-right: auto;
+}
+
+.div_estilizado {
+    padding: 1%;
+    border-radius: 5%;
+    height: fit-content;
+    width: fit-content;
+    border: 2px solid;
+    margin-right: auto;
+}
+
+.cuadroInfo {
+    background-color: papayawhip;
+    width: fit-content;
+    height: 50%;
+    padding: 0.5%;
+    padding-right: 2.5%;
+    align-items: center;
+    border: 2px solid;
+    border-radius: 5%;
+    margin-right: 2%;
+}
+
+.fotoControlador {
+    width: 400px;
+    height: 168px;
+    position: relative;
+    border: 2px solid;
+}
+
+.SubtitulosD {
+    font-weight: 700;
+    color: #176038;
+    letter-spacing: normal;
+    font-size: 30px;
+    position: relative;
+    border: 2px solid;
 }
 
 
