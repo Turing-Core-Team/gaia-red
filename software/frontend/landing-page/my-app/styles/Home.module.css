@@ -1033,8 +1033,9 @@ tomada de: https://github.com/tbcodes/animate_background_css/blob/master/css_cod
     .cuadroResumen {
         margin-top: 2%;
         margin-bottom: 3%;
-        margin-left: -8%;
-        width: 110%;
+        margin-left: -4%;
+        padding-right: 2%;
+        width: 100%;
         height: fit-content;
     }
     .dashInfo {
