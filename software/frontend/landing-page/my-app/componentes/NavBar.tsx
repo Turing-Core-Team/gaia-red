@@ -21,6 +21,8 @@ const Navbar = () => {
     const irApoyo = () =>{
         window.location.href = "#Apoyo";
     }
+    //Desde la implementación de next.Link ya no se utilizan estas funciones
+    // poner / nos remite al archivo principal
 
     
     return (
@@ -28,11 +30,14 @@ const Navbar = () => {
         <nav className={styles.navb}>
                 <Image src="/logo_gaia.png" height={49} width={38} layout="fixed"></Image>
                 <h3 className={styles.gaiaText}>Gaia Red</h3>
-                <button className={styles.navButtons} onClick={irInicio}>Inicio</button> 
-               <button className={styles.navButtons} onClick={irEquipo}>Equipo</button>
-               <button className={styles.navButtons} onClick={irQuienes}>Quiénes somos</button>
-               <button className={styles.navButtons} onClick={irApoyo}>Apoyos</button>
-               <button className={styles.navButtons} onClick={irContacto}>Contacto</button>
+                <button className={styles.navButtons}><Link href={"/#top"}>Inicio</Link></button> 
+               <button className={styles.navButtons} ><Link href={"/#Equipo"}>Equipo</Link></button>
+               <button className={styles.navButtons} ><Link href={"/#Quienes"}>Quiénes somos</Link></button>
+               <button className={styles.navButtons} ><Link href={"/#Apoyo"}>Apoyos</Link></button>
+               <button className={styles.navButtons} ><Link href={"/#Contacto"}>Contacto</Link></button>
+               <button className={styles.navButtons} > <Link href={"/dashBoard"}>
+               Dashboard
+               </Link></button>
 
         </nav>
         </>

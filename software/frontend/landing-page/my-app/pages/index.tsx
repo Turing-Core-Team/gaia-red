@@ -45,8 +45,10 @@ const Home: NextPage = () => {
           <div id="inicio"></div>
         </Layout>
         <h2 className={styles.Subtitulos}>Acerca de </h2>
+        <div>
         <p className={styles.textoComun} >En Colombia la mayoría de cultivos productivos son pocos tecnificados y no cuentan con acceso a internet, el cual puede ser una herramienta fundamental para empezar a aplicar tecnologías 4.0 en el sector agrícola. Por ello nace <strong>Gaia Red</strong>, un proyecto que lleva la tecnificación al campo colombiano. Buscamos que los cultivos sean monitoreados de modo que se puedan analizar para poder tomar decisiones que ayuden a mejorar la calidad de las cosechas.
         </p>
+           </div>
 
         <Grid>
           <Infodiv {...["01", "Monitoreo de cultivos  en tiempo real", "El monitoreo en tiempo real ayuda a conocer el estado del cultivo y así saber lo que necesita para crecer."]} />
