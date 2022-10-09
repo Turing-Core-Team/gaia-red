@@ -9,6 +9,7 @@ import Chart from 'chart.js/auto';
 import { Line } from 'react-chartjs-2';
 import { CategoryScale } from "chart.js";
 import { defaults } from "chart.js";
+import MobileNav from "../componentes/mobileNav";
 
 //esto se utiliza pq según entiendo al usar chart.js con react
 /*v4 of this library, just like Chart.js v3,
@@ -76,7 +77,7 @@ const DashBoard = () => {
     };
 
 
-
+/*Inicio componentes: */
    
     return (
         <div className={styles.container}>
@@ -86,6 +87,7 @@ const DashBoard = () => {
                 <link rel="icon" href="/monitor.ico" />
             </Head>
             <Navbar></Navbar>
+            <MobileNav></MobileNav>
             <main className={styles.main}>
 
                 <Article_dash>
@@ -154,7 +156,7 @@ const DashBoard = () => {
                 <span className='fotospeque'>
                     { /*  <Image src="/turinglogo.png" alt="Logo turing" width={120} height={40} /> */}
                     <br></br>
-                    <a href="https://www.flaticon.es/iconos-gratis/ui" title="ui iconos">Ui iconos creados por SBTS2018 - Flaticon</a>
+                    <a href="https://iconos8.es/icons" title="ui iconos">Iconos obtenidos de iconos8.es</a>
                 </span>
 
             </footer>
