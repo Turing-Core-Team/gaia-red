@@ -789,6 +789,22 @@ tomada de: https://github.com/tbcodes/animate_background_css/blob/master/css_cod
     .navMobile {
         display: flex;
         border-radius: 5%;
+        padding-bottom: 20%;
+    }
+    .textoLink {
+        font-size: 1em;
+        font-family: 'avenirlight', 'sans';
+        border-radius: 30px;
+        text-align: left;
+        position: relative;
+        font-weight: lighter;
+        color: black;
+        background-color: transparent;
+        margin: 0;
+        padding-right: 15%;
+        margin-bottom: 15%;
+        padding-left: 15%;
+        width: fit-content;
     }
     .botonesMenu {
         /*left: 10%;*/
@@ -807,7 +823,7 @@ tomada de: https://github.com/tbcodes/animate_background_css/blob/master/css_cod
         /*animation: menuVertical;*/
         /*animation-duration: 2s;*/
     }
-    .botonesMenu:hover {
+    .textoLink:hover {
         background-color: #4F936E;
         color: white;
     }
@@ -1012,6 +1028,123 @@ tomada de: https://github.com/tbcodes/animate_background_css/blob/master/css_cod
         position: relative;
         margin-top: 5%;
         margin-bottom: 5%;
+    }
+    /*Version mobile del dashboard*/
+    .cuadroResumen {
+        margin-top: 2%;
+        margin-bottom: 3%;
+        margin-left: -8%;
+        width: 110%;
+        height: fit-content;
+    }
+    .dashInfo {
+        display: flex;
+        margin-left: 2%;
+        margin-right: 2%;
+        flex-direction: column;
+        align-items: flex-start;
+        width: fit-content;
+        height: fit-content;
+        padding: 2%;
+        position: relative;
+        /* border: 2px solid; */
+    }
+    .textoComunD {
+        font-size: 1em;
+        line-height: 1.5em;
+        font-family: 'avenirlight', 'sans-serif';
+        position: relative;
+        /* border: 2px solid; */
+        margin-top: -5%;
+    }
+    .flexCol {
+        display: flex;
+        height: fit-content;
+        position: relative;
+        width: fit-content;
+        padding-right: 20%;
+        flex-direction: column;
+        align-items: center;
+        /* border: solid 2px; */
+        margin-left: -2%;
+        margin-top: 2%;
+        margin-bottom: -2%;
+        margin-right: auto;
+    }
+    .flexCol>p {
+        margin-top: -5%;
+        position: relative;
+        margin-right: auto;
+        margin-bottom: 5%;
+        padding-right: 4%;
+        /* border: 2px solid; */
+    }
+    .flexCol>h2 {
+        margin-right: auto;
+        margin-top: 5%;
+        text-align: left;
+    }
+    .flexRow {
+        display: flex;
+        flex-direction: column;
+        padding: 2%;
+        height: fit-content;
+        width: 100%;
+        align-items: center;
+        /* border: 2px solid; */
+        margin: auto;
+        position: relative;
+    }
+    .iconoDs {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        /* border: 2px solid; */
+        margin-right: auto;
+    }
+    .div_estilizado {
+        margin-left: -42%;
+        margin-top: 4%;
+        position: relative;
+        padding-right: 4%;
+        height: fit-content;
+        width: fit-content;
+        border: 2px solid gray;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        font-weight: 600;
+    }
+    /*version mobile*/
+    .cuadroInfo {
+        margin-bottom: 3%;
+        display: flex;
+        align-items: center;
+        background-color: papayawhip;
+        width: 60%;
+        height: 40%;
+        padding: 0.5%;
+        /* border: 2px solid; */
+        border-radius: 5%;
+        margin-left: 4%;
+    }
+    .cuadroInfo:hover {
+        background-color: rgb(127, 161, 245);
+    }
+    .fotoGrafico {
+        padding-top: 10%;
+        padding-bottom: 2%;
+        /* border: 2px solid; */
+        position: relative;
+        width: 280px;
+        margin: auto;
+        height: 200px;
+        margin-left: 3%;
+    }
+    .SubtitulosD {
+        font-weight: 700;
+        font-size: 35px;
     }
 }
 

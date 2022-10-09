@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useRef } from 'react';
 import { markAsUntransferable } from 'worker_threads';
 import styles from '../styles/Home.module.css';
@@ -18,6 +19,9 @@ const MobileNav = () =>{
             abierto = false;
         }
     }
+
+   /*
+   Estas funciones ya no se usan por que fueron reemplazadas con next.Link
 
     const cerrarMenu = () =>{
         if(menu.current!==null && abierto){
@@ -52,16 +56,21 @@ const MobileNav = () =>{
         alert("funcionalidad aún en desarrollo :)")
         cerrarMenu();
     }
+   
+   */
     return(
         <div className={styles.navMobile} >
             <button onClick={mostrarMenu} className={styles.iconMenu}></button>
             <ul className={styles.listaMobile} ref={menu}>
-            <li><button className={styles.botonesMenu} onClick={irInicio}>Inicio</button> </li>
-                <li><button className={styles.botonesMenu} onClick={irSomos}>Somos</button></li>
-                <li><button className={styles.botonesMenu} onClick={irEquipo}>Equipo</button></li>
-                <li><button className={styles.botonesMenu} onClick={irApoyo}>Apoyos</button></li>
-                <li><button className={styles.botonesMenu} onClick={irContacto}>Contacto</button></li>
-                <li><button className={styles.botonesMenu} onClick={irDashBoard}>Dashboard </button></li>
+            <li> <Link href={"/#top"}><p className={styles.textoLink}>Inicio</p></Link> </li> 
+            <li>  <Link href={"/#Equipo"}><p className={styles.textoLink}>Equipo</p></Link></li>
+            <li>  <Link href={"/#Quienes"}><p className={styles.textoLink}>Somos</p></Link></li>
+            <li>  <Link href={"/#Apoyo"}><p className={styles.textoLink}>Apoyos</p></Link></li>
+            <li> <Link href={"/#Contacto"}><p className={styles.textoLink}>Contacto</p></Link></li>
+            <li>   <Link href={"/dashBoard"}>
+            <p className={styles.textoLink}>Dashboard </p>
+               </Link></li>
+
             </ul>
         </div>
 
