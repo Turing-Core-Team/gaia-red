@@ -701,6 +701,18 @@ tomada de: https://github.com/tbcodes/animate_background_css/blob/master/css_cod
     position: relative;
 }
 
+.flexRow1 {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    height: fit-content;
+    width: 100%;
+    align-items: center;
+    /* border: 2px solid; */
+    margin: auto;
+    position: relative;
+}
+
 .iconoDs {
     width: 50px;
     height: 50px;
@@ -1085,6 +1097,7 @@ tomada de: https://github.com/tbcodes/animate_background_css/blob/master/css_cod
         margin-top: 5%;
         text-align: left;
     }
+    /*version responsive*/
     .flexRow {
         display: flex;
         flex-direction: column;
@@ -1093,6 +1106,18 @@ tomada de: https://github.com/tbcodes/animate_background_css/blob/master/css_cod
         width: 100%;
         align-items: center;
         /* border: 2px solid; */
+        margin: auto;
+        position: relative;
+    }
+    .flexRow1 {
+        display: grid;
+        grid-template-rows: 200px 200px;
+        grid-template-columns: 2fr 2fr;
+        padding: 2%;
+        height: fit-content;
+        width: 100%;
+        align-items: center;
+        /*border: 2px solid;*/
         margin: auto;
         position: relative;
     }
@@ -1123,10 +1148,10 @@ tomada de: https://github.com/tbcodes/animate_background_css/blob/master/css_cod
         display: flex;
         align-items: center;
         background-color: papayawhip;
-        width: 60%;
-        height: 40%;
+        width: 85%;
+        height: 85%;
         padding: 0.5%;
-        /* border: 2px solid; */
+        /*border: 2px solid;*/
         border-radius: 5%;
         margin-left: 4%;
     }

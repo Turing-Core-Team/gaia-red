@@ -101,10 +101,9 @@ const DashBoard = () => {
                       { /*  <img src={'/bogota.jpg'} className={styles.fotoControlador}></img> */}
                     </article>
                     
-                    <section className={styles.flexRow}>
+                    <section className={styles.flexRow1}>
                         <Infodash {...['20 C°', '/temperature.png', "Temperatura (C°)", '1']}></Infodash>
                         <Infodash {...['40%', '/humedad.png', "H.Relativa (%)", '2']}></Infodash>
-                        <Infodash {...['2cm', '/distancia.png', "Distancia (cm)", '3']}></Infodash>
                         <Infodash {...['ON', '/brillo.png', "Brillo (on/off)", '4']}></Infodash>
 
                     </section>
