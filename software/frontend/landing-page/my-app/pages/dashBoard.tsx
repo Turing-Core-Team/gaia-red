@@ -98,10 +98,12 @@ const DashBoard = () => {
         ]
     };
 
-
+let val_inicial = [dataResponse[0].temp_val,dataResponse[0].brillo_val,dataResponse[0].humedad_val];
+// val_inicial = [1,2,3]
+console.log(dataResponse[0])
 /*Inicio componentes: */
-   
     return (
+       
         <div className={styles.container}>
             <Head>
                 <title>DashBoard</title>
@@ -123,9 +125,9 @@ const DashBoard = () => {
                     </article>
                     {/*pq no se actualiza el dataResponse? */}
                     <section className={styles.flexRow1}>
-                        <Infodash {...['dataResponse[0].temp_val'+' C°', '/temperature.png', "Temperatura (C°)", '1']}></Infodash>
-                        <Infodash {...['dataResponse[0].humedad_val'+'%', '/humedad.png', "H.Relativa (%)", '2']}></Infodash>
-                        <Infodash {...['dataResponse[0].brillo_val', '/brillo.png', "Brillo (on/off)", '4']}></Infodash>
+                        <Infodash {...['val_inicial[0]'+' C°', '/temperature.png', "Temperatura (C°)", '1']}></Infodash>
+                        <Infodash {...['val_inicial[1]'+'%', '/humedad.png', "H.Relativa (%)", '2']}></Infodash>
+                        <Infodash {...['val_inicial[2]', '/brillo.png', "Brillo (on/off)", '4']}></Infodash>
 
                     </section>
                     
