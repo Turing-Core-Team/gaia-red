@@ -27,21 +27,20 @@ const DashBoard = () => {
     //ella guarda lo que traemos de getData.ts
     const [dataResponse,setdataResponse] = useState<any[]>([]);
     //traer datos de la db y guardarlos con useeffect
+    async function getPageData(){
+        const apiUrlEndpoint = './api/getData';
+        const response = await fetch(apiUrlEndpoint)
+        const res = await response.json();
+        console.log(res);
+        setdataResponse(res.results);
+    }
     useEffect(
         ()=>{
-            async function getPageData(){
-                const apiUrlEndpoint = './api/getData';
-                const response = await fetch(apiUrlEndpoint)
-                const res = await response.json();
-                console.log(res);
-                setdataResponse(res.results);
-            }
-            getPageData();
-        },[]
+            getPageData()},[]
     );
-
+    
     console.log(dataResponse);
-    console.log(dataResponse[0].temp_val);
+    //console.log(dataResponse[0].temp_val);
 
   
 
@@ -124,11 +123,11 @@ const DashBoard = () => {
                         </section>
                       { /*  <img src={'/bogota.jpg'} className={styles.fotoControlador}></img> */}
                     </article>
-                    
+                    {/*pq no se actualiza el dataResponse? */}
                     <section className={styles.flexRow1}>
-                        <Infodash {...[dataResponse[0].temp_val+' C°', '/temperature.png', "Temperatura (C°)", '1']}></Infodash>
-                        <Infodash {...[dataResponse[0].humedad_val+'%', '/humedad.png', "H.Relativa (%)", '2']}></Infodash>
-                        <Infodash {...[dataResponse[0].brillo_val, '/brillo.png', "Brillo (on/off)", '4']}></Infodash>
+                        <Infodash {...[''+' C°', '/temperature.png', "Temperatura (C°)", '1']}></Infodash>
+                        <Infodash {...[''+'%', '/humedad.png', "H.Relativa (%)", '2']}></Infodash>
+                        <Infodash {...['', '/brillo.png', "Brillo (on/off)", '4']}></Infodash>
 
                     </section>
                     
