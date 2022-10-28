@@ -1128,8 +1128,9 @@ tomada de: https://github.com/tbcodes/animate_background_css/blob/master/css_cod
         /* border: 2px solid; */
         margin-right: auto;
     }
+    /*version mobile*/
     .div_estilizado {
-        margin-left: -42%;
+        margin-left: -23%;
         margin-top: 4%;
         position: relative;
         padding-right: 4%;
