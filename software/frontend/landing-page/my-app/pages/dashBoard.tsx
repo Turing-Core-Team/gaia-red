@@ -30,7 +30,7 @@ const DashBoard = () => {
     useEffect(
         ()=>{
             async function getPageData(){
-                const apiUrlEndpoint = 'https://gaia-red2.vercel.app/api/getData';
+                const apiUrlEndpoint = './api/getData';
                 const response = await fetch(apiUrlEndpoint)
                 const res = await response.json();
                 console.log(res);
