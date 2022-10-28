@@ -31,16 +31,14 @@ const DashBoard = () => {
         const apiUrlEndpoint = './api/getData';
         const response = await fetch(apiUrlEndpoint)
         const res = await response.json();
-        console.log(res);
-        setdataResponse(res.results);
+        setdataResponse(res.reportes);
     }
     useEffect(
         ()=>{
             getPageData()},[]
     );
-    
     console.log(dataResponse);
-    //console.log(dataResponse[0].temp_val);
+    console.log(typeof dataResponse)
 
   
 
@@ -125,9 +123,9 @@ const DashBoard = () => {
                     </article>
                     {/*pq no se actualiza el dataResponse? */}
                     <section className={styles.flexRow1}>
-                        <Infodash {...[''+' C°', '/temperature.png', "Temperatura (C°)", '1']}></Infodash>
-                        <Infodash {...[''+'%', '/humedad.png', "H.Relativa (%)", '2']}></Infodash>
-                        <Infodash {...['', '/brillo.png', "Brillo (on/off)", '4']}></Infodash>
+                        <Infodash {...['dataResponse[0].temp_val'+' C°', '/temperature.png', "Temperatura (C°)", '1']}></Infodash>
+                        <Infodash {...['dataResponse[0].humedad_val'+'%', '/humedad.png', "H.Relativa (%)", '2']}></Infodash>
+                        <Infodash {...['dataResponse[0].brillo_val', '/brillo.png', "Brillo (on/off)", '4']}></Infodash>
 
                     </section>
                     
