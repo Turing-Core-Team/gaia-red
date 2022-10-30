@@ -25,7 +25,10 @@ const DashBoard = () => {
    
     //crear variable global dataResponse
     //ella guarda lo que traemos de getData.ts
-    const [dataResponse,setdataResponse] = useState<any[]>([]);
+    const [dataResponse,setdataResponse] = useState<any[]>(['']);
+    const [dataTemp,setdataTemp] = useState<any[]>(['']);
+    const [dataHR,setdataHR] = useState<any[]>(['']);
+    const [dataD,setdataD] = useState<any[]>(['']);
     //traer datos de la db y guardarlos con useeffect
     async function getPageData(){
         const apiUrlEndpoint = './api/getData';
@@ -98,12 +101,21 @@ const DashBoard = () => {
         ]
     };
 
-//let val_inicial = [dataResponse[0].temp_val,dataResponse[0].brillo_val,dataResponse[0].humedad_val];
+const actualizarDatos = () =>{
+    dataResponse.map((reporte:any)=>{
+        if(reporte.nombre='Distancia'){
+            dataD.push(reporte.valor)
+            setdataD(dataD);
+        }
+    });
+
+}
+
 // val_inicial = [1,2,3]
 //console.log(dataResponse[0])
 /*Inicio componentes: */
     return (
-       
+        
         <div className={styles.container}>
             <Head>
                 <title>DashBoard</title>
@@ -125,10 +137,11 @@ const DashBoard = () => {
                     </article>
                     {/*pq no se actualiza el dataResponse? */}
                     <section className={styles.flexRow1}>
-                        <Infodash {...['val_inicial[0]'+' C°', '/temperature.png', "Temperatura (C°)", '1']}></Infodash>
-                        <Infodash {...['val_inicial[1]'+'%', '/humedad.png', "H.Relativa (%)", '2']}></Infodash>
-                        <Infodash {...['val_inicial[2]', '/brillo.png', "Brillo (on/off)", '4']}></Infodash>
-
+                        
+                        <Infodash {...[dataResponse[0].valor+' C°', '/temperature.png', "Temperatura (C°)", '1']}></Infodash>
+                        <Infodash {...[dataResponse[1].valor+'%', '/humedad.png', "H.Relativa (%)", '2']}></Infodash>
+                        <Infodash {...[dataResponse[2].valor, '/brillo.png', "Brillo (on/off)", '4']}></Infodash>
+                        <button onClick={actualizarDatos}>presioname</button>
                     </section>
                     
                     
