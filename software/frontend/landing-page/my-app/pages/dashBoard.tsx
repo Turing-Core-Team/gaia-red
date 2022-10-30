@@ -98,9 +98,9 @@ const DashBoard = () => {
         ]
     };
 
-let val_inicial = [dataResponse[0].temp_val,dataResponse[0].brillo_val,dataResponse[0].humedad_val];
+//let val_inicial = [dataResponse[0].temp_val,dataResponse[0].brillo_val,dataResponse[0].humedad_val];
 // val_inicial = [1,2,3]
-console.log(dataResponse[0])
+//console.log(dataResponse[0])
 /*Inicio componentes: */
     return (
        

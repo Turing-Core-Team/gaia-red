@@ -5,7 +5,7 @@ import {kuery} from '../../lib/db';
 export default async function handler(req:any,res:any){
         try{
             //intentamos hacer nuestra query
-            const query:string = 'SELECT reporte_id,temp_val,humedad_val,brillo_val FROM reporte JOIN brillo ON brillo_id=reporte_id_brillo JOIN humedad ON humedad_id=reporte_id_hum JOIN temperatura ON temp_id = reporte_id_temp';
+            const query:string = 'SELECT * FROM registros';
             const values:string[] = [];
             //esta parte ejecuta nuestra consulta por medio de una funcion asincrona
             const data = await kuery(query,[]) ;
