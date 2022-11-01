@@ -26,9 +26,9 @@ const DashBoard = () => {
     //crear variable global dataResponse
     //ella guarda lo que traemos de getData.ts
     const [dataResponse,setdataResponse] = useState<any[]>([]);
-    const [dataTemp,setdataTemp] = useState<string[]>(['cargando']);
-    const [dataHR,setdataHR] = useState<string[]>(['cargando']);
-    const [dataD,setdataD] = useState<string[]>(['cargando']);
+    const [dataTemp,setdataTemp] = useState<string[]>(['cargando','cargando']);
+    const [dataHR,setdataHR] = useState<string[]>(['cargando','cargando']);
+    const [dataD,setdataD] = useState<string[]>(['cargando','cargando']);
     
     //traer datos de la db y guardarlos con useeffect
     async function actualizarDatos(data:any) {
