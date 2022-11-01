@@ -26,25 +26,29 @@ const DashBoard = () => {
     //crear variable global dataResponse
     //ella guarda lo que traemos de getData.ts
     const [dataResponse,setdataResponse] = useState<any[]>([]);
-    const [dataTemp,setdataTemp] = useState<string[]>(['cargando','cargando']);
-    const [dataHR,setdataHR] = useState<string[]>(['cargando','cargando']);
-    const [dataD,setdataD] = useState<string[]>(['cargando','cargando']);
+    const [dataTemp,setdataTemp] = useState<string[]>(['cargando']);
+    const [dataHR,setdataHR] = useState<string[]>(['cargando']);
+    const [dataD,setdataD] = useState<string[]>(['cargando']);
     
     //traer datos de la db y guardarlos con useeffect
     async function actualizarDatos(data:any) {
+        let count:number 
         let arr:string[] = [''];
         let arr2:string[] = [''];
         let arr3:string[] = [''];
         data.map((reporte:any)=>{
             console.log('ejecutando')
             if(reporte.nombre=='Distancia'){
-                arr.push(reporte.valor)
+                if(arr[0]=='') arr[0] =reporte.valor;
+                else arr.push(reporte.valor)
             }
             else if(reporte.nombre=='HR'){
-                arr2.push(reporte.valor)
+                if(arr2[0]=='') arr2[0] =reporte.valor;
+                else arr2.push(reporte.valor)
             }
             else if(reporte.nombre=='Temperatura'){
-                arr3.push(reporte.valor)
+                if(arr3[0]=='') arr3[0] =reporte.valor;
+                else arr3.push(reporte.valor)
             }
 
         });
@@ -177,9 +181,9 @@ const DashBoard = () => {
                     </article>
                     {/*pq no se actualiza el dataResponse? */}
                     <section className={styles.flexRow1}>
-                            <Infodash {...[dataTemp[1]+' C°', '/temperature.png', "Temperatura (C°)", '1']}></Infodash>
-                            <Infodash {...[dataHR[1]+'%', '/humedad.png', "H.Relativa (%)", '2']}></Infodash>
-                            <Infodash {...[dataD[1], '/brillo.png', "Brillo (on/off)", '4']}></Infodash> 
+                            <Infodash {...[dataTemp[0]+' C°', '/temperature.png', "Temperatura (C°)", '1']}></Infodash>
+                            <Infodash {...[dataHR[0]+'%', '/humedad.png', "H.Relativa (%)", '2']}></Infodash>
+                            <Infodash {...[dataD[0], '/brillo.png', "Brillo (on/off)", '4']}></Infodash> 
                             <button  className={styles.botonInfo} onClick={()=>
                            
                                 actualizarDatos(dataResponse)
