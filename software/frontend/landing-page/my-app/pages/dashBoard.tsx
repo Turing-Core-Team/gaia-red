@@ -25,11 +25,47 @@ const DashBoard = () => {
    
     //crear variable global dataResponse
     //ella guarda lo que traemos de getData.ts
-    const [dataResponse,setdataResponse] = useState<any[]>(['']);
-    const [dataTemp,setdataTemp] = useState<any[]>(['']);
-    const [dataHR,setdataHR] = useState<any[]>(['']);
-    const [dataD,setdataD] = useState<any[]>(['']);
+    const [dataResponse,setdataResponse] = useState<any[]>([]);
+    const [dataTemp,setdataTemp] = useState<string[]>(['cargando']);
+    const [dataHR,setdataHR] = useState<string[]>(['cargando']);
+    const [dataD,setdataD] = useState<string[]>(['cargando']);
+    
     //traer datos de la db y guardarlos con useeffect
+    async function actualizarDatos(data:any) {
+        let arr:string[] = [''];
+        let arr2:string[] = [''];
+        let arr3:string[] = [''];
+        data.map((reporte:any)=>{
+            console.log('ejecutando')
+            if(reporte.nombre=='Distancia'){
+                arr.push(reporte.valor)
+            }
+            else if(reporte.nombre=='HR'){
+                arr2.push(reporte.valor)
+            }
+            else if(reporte.nombre=='Temperatura'){
+                arr3.push(reporte.valor)
+            }
+
+        });
+        //borrando datos vacios:
+        arr.map((element)=>{
+            if(element=='')  arr[arr.indexOf(element)]= 'No data'
+        })
+        arr2.map((element)=>{
+            if(element=='')  arr2[arr2.indexOf(element)]= 'No data'
+        })
+        arr3.map((element)=>{
+            if(element=='')  arr3[arr3.indexOf(element)]= 'No data'
+        })
+        console.log('tu tu tu hermana')
+        setdataD(arr);
+        setdataHR(arr2);
+        setdataTemp(arr3);
+        
+        
+    
+    }
     async function getPageData(){
         const apiUrlEndpoint = './api/getData';
         const response = await fetch(apiUrlEndpoint)
@@ -38,12 +74,25 @@ const DashBoard = () => {
     }
     useEffect(
         ()=>{
-            getPageData()},[]
+            getPageData()
+        },[]
     );
+   
+   
+    
+    
     console.log(dataResponse);
+    console.log('tipo de datos:')
     console.log(typeof dataResponse)
+    console.log('arreglo dst:')
+    console.log(dataD);
+    console.log('arreglo t')
+    console.log(dataTemp);
+    console.log('arreglo hum:')
+    console.log(dataHR);
+    
 
-  
+        
 
     Chart.register(CategoryScale);
     defaults.font.family = 'avenirlight', 'sans';
@@ -101,15 +150,6 @@ const DashBoard = () => {
         ]
     };
 
-const actualizarDatos = () =>{
-    dataResponse.map((reporte:any)=>{
-        if(reporte.nombre='Distancia'){
-            dataD.push(reporte.valor)
-            setdataD(dataD);
-        }
-    });
-
-}
 
 // val_inicial = [1,2,3]
 //console.log(dataResponse[0])
@@ -137,11 +177,15 @@ const actualizarDatos = () =>{
                     </article>
                     {/*pq no se actualiza el dataResponse? */}
                     <section className={styles.flexRow1}>
-                        
-                        <Infodash {...[dataResponse[0].valor+' C°', '/temperature.png', "Temperatura (C°)", '1']}></Infodash>
-                        <Infodash {...[dataResponse[1].valor+'%', '/humedad.png', "H.Relativa (%)", '2']}></Infodash>
-                        <Infodash {...[dataResponse[2].valor, '/brillo.png', "Brillo (on/off)", '4']}></Infodash>
-                        <button onClick={actualizarDatos}>presioname</button>
+                            <Infodash {...[dataTemp[1]+' C°', '/temperature.png', "Temperatura (C°)", '1']}></Infodash>
+                            <Infodash {...[dataHR[1]+'%', '/humedad.png', "H.Relativa (%)", '2']}></Infodash>
+                            <Infodash {...[dataD[1], '/brillo.png', "Brillo (on/off)", '4']}></Infodash> 
+                            <button  className={styles.botonInfo} onClick={()=>
+                           
+                                actualizarDatos(dataResponse)
+                            
+                            }>actualizar</button>
+
                     </section>
                     
                     

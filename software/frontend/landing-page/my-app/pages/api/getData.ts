@@ -9,7 +9,7 @@ export default async function handler(req:any,res:any){
             const values:string[] = [];
             //esta parte ejecuta nuestra consulta por medio de una funcion asincrona
             const data = await kuery(query,[]) ;
-            console.log(data);
+ 
             res.status(200).json({reportes: data});
             //terminamos la conexión por seguridad
             //mostramos en el frontend los valores
