@@ -19,3 +19,20 @@ export async function kuery(query:any, values = [] ) {
   }
 }
 
+/**
+ * host:'54.209.83.225',
+    database:'redGaia',
+    user:'juanma',
+    port:3306,
+    password:'sistemas1'
+ * 
+ * 
+ */
+
+    /**
+     *  host:'localhost',
+    database:'prueba_gaia',
+    user:'root',
+    port:3306,
+    password:'toor'
+     */

@@ -560,6 +560,24 @@ tomada de: https://github.com/tbcodes/animate_background_css/blob/master/css_cod
     background-color: #4F936E;
 }
 
+.botonDash {
+    background-color: papayawhip;
+    border-radius: 7%;
+    width: fit-content;
+    border: 2px gray solid;
+    height: fit-content;
+    padding: 5%;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'avenirlight', 'sans-serif';
+}
+
+.botonDash:hover {
+    background-color: bisque;
+}
+
 .description {
     margin: 2%;
     line-height: 1.5;

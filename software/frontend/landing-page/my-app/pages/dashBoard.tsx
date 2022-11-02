@@ -26,47 +26,49 @@ const DashBoard = () => {
     //crear variable global dataResponse
     //ella guarda lo que traemos de getData.ts
     const [dataResponse,setdataResponse] = useState<any[]>([]);
-    const [dataTemp,setdataTemp] = useState<string[]>(['cargando']);
-    const [dataHR,setdataHR] = useState<string[]>(['cargando']);
-    const [dataD,setdataD] = useState<string[]>(['cargando']);
+    const [dataTemp,setdataTemp] = useState<number[]>([-1]);
+    const [dataHR,setdataHR] = useState<number[]>([-1]);
+    const [dataD,setdataD] = useState<number[]>([-1]);
     
     //traer datos de la db y guardarlos con useeffect
     async function actualizarDatos(data:any) {
         let count:number 
-        let arr:string[] = [''];
-        let arr2:string[] = [''];
-        let arr3:string[] = [''];
+        let arr:number[] = [-1];
+        let arr2:number[] = [-1];
+        let arr3:number[] = [-1];
         data.map((reporte:any)=>{
             console.log('ejecutando')
             if(reporte.nombre=='Distancia'){
-                if(arr[0]=='') arr[0] =reporte.valor;
-                else arr.push(reporte.valor)
+                if(arr[0]==-1) arr[0] =reporte.valor;
+                else arr.push(parseInt(reporte.valor))
             }
             else if(reporte.nombre=='HR'){
-                if(arr2[0]=='') arr2[0] =reporte.valor;
-                else arr2.push(reporte.valor)
+                if(arr2[0]==-1) arr2[0] =reporte.valor;
+                else arr2.push(parseInt(reporte.valor))
             }
             else if(reporte.nombre=='Temperatura'){
-                if(arr3[0]=='') arr3[0] =reporte.valor;
-                else arr3.push(reporte.valor)
+                if(arr3[0]==-1) arr3[0] =reporte.valor;
+                else arr3.push(parseInt(reporte.valor))
             }
+            //pendiente, cambiar de string a number para las graficas
 
         });
         //borrando datos vacios:
         arr.map((element)=>{
-            if(element=='')  arr[arr.indexOf(element)]= 'No data'
+            if(element==-1)  arr[arr.indexOf(element)]= -1
         })
         arr2.map((element)=>{
-            if(element=='')  arr2[arr2.indexOf(element)]= 'No data'
+            if(element==-1)  arr2[arr2.indexOf(element)]= -1
         })
         arr3.map((element)=>{
-            if(element=='')  arr3[arr3.indexOf(element)]= 'No data'
+            if(element==-1)  arr3[arr3.indexOf(element)]= -1
         })
         console.log('tu tu tu hermana')
         setdataD(arr);
         setdataHR(arr2);
         setdataTemp(arr3);
-        
+        //actualizamos la consulta
+     
         
     
     }
@@ -81,6 +83,13 @@ const DashBoard = () => {
             getPageData()
         },[]
     );
+        //como hacemos para que se actualice al instante?
+     async function actualizarPagina(data:any){
+        await getPageData();
+        setTimeout(() => {
+           actualizarDatos(data) 
+        },200);
+    }
    
    
     
@@ -103,10 +112,10 @@ const DashBoard = () => {
     defaults.font.weight = '800';
     const dataBarra = {
 
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['1', '2', '3', '4', '5', '6'],
         datasets: [{
-            label: 'Grafico de barras',
-            data: [12, 19, 3, 5, 2, 3],
+            label: 'Grafico de Distancia',
+            data: dataD,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -128,7 +137,7 @@ const DashBoard = () => {
     };
 
     const data = {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        labels: ['1', '2', '3', '4', '5', '6', '7'],
         datasets: [
             {
                 //para cada linea se crea un dataSet
@@ -138,7 +147,7 @@ const DashBoard = () => {
                 lineTension: 0.1,
                 backgroundColor: 'rgba(75,192,192,0.4)',
                 borderColor: 'rgba(75,192,192,1)',
-                data: [65, 59, 80, 81, 56, 55, 40]
+                data: dataTemp
             },
 
             {
@@ -149,7 +158,7 @@ const DashBoard = () => {
                 lineTension: 0.1,
                 backgroundColor: 'rgb(250,128,114)',
                 borderColor: 'rgb(250,128,114)',
-                data: [25, 19, 60, 11, 26, 75, 20]
+                data: dataHR
             }
         ]
     };
@@ -181,12 +190,13 @@ const DashBoard = () => {
                     </article>
                     {/*pq no se actualiza el dataResponse? */}
                     <section className={styles.flexRow1}>
-                            <Infodash {...[dataTemp[0]+' C°', '/temperature.png', "Temperatura (C°)", '1']}></Infodash>
-                            <Infodash {...[dataHR[0]+'%', '/humedad.png', "H.Relativa (%)", '2']}></Infodash>
-                            <Infodash {...[dataD[0], '/brillo.png', "Brillo (on/off)", '4']}></Infodash> 
-                            <button  className={styles.botonInfo} onClick={()=>
+                            <Infodash {...[dataTemp[dataTemp.length-1].toString()+' C°', '/temperature.png', "Temperatura (C°)", '1']}></Infodash>
+                            <Infodash {...[dataHR[dataHR.length-1].toString()+'%', '/humedad.png', "H.Relativa (%)", '2']}></Infodash>
+                            <Infodash {...[dataD[dataD.length-1].toString(), '/brillo.png', "Brillo (on/off)", '4']}></Infodash> 
+                            <button  className={styles.botonDash} onClick={()=>
                            
-                                actualizarDatos(dataResponse)
+                                actualizarPagina(dataResponse)
+                               
                             
                             }>actualizar</button>
 
@@ -197,7 +207,7 @@ const DashBoard = () => {
                         <section className={styles.dashInfo} >
                             <h3 className={styles.SubtitulosD}>Gráficos asociados a los reportes</h3>
                             <br></br>
-                            <p className={styles.textoComunD}>Histograma, Humedad Relativa y temperatura en 24h</p>
+                            <p className={styles.textoComunD}>Histograma, Humedad Relativa y temperatura en 24h. Eje x: valores Eje y: numero reporte</p>
                         </section>
                     </div>
                     
