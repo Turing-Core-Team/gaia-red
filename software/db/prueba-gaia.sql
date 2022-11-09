@@ -11,16 +11,21 @@ INSERT INTO reportes VALUES ('Distancia',190),
 ('Distancia',20)
 ;
 
-INSERT INTO reportes VALUES ('Temperatura',3),
+UPDATE  reportes
+SET valor=20
+WHERE valor=200 and nombre LIKE '%HR%';
+
+INSERT INTO reportes VALUES ('Temperatura',25),
 ('HR',0),
-('HR',4),
+('HR',65),
 ('Temperatura',10),
-('HR',1000)
+('HR',2)
 ;
 
 DELETE FROM reportes
-WHERE valor!=0;
+WHERE valor=1000;
 
+INSERT INTO reportes VALUES ('Distancia',90),('Distancia',50);
 
 SELECT * FROM reportes;
 
