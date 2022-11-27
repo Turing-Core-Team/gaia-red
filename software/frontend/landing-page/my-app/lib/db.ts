@@ -2,11 +2,11 @@ import mysql from "mysql2/promise";
 
 export async function kuery(query:any, values = [] ) {
   const dbconnection = await mysql.createConnection({
-    host:'localhost',
-    database:'prueba_gaia',
-    user:'root',
+    host:'54.209.83.225',
+    database:'redGaia',
+    user:'juanma',
     port:3306,
-    password:'toor'
+    password:'sistemas1'
   });
   try {
     const [results] = await dbconnection.execute(query, values);
