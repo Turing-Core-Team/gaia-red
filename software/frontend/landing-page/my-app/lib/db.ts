@@ -21,10 +21,9 @@ export async function kuery(query:any, values = [] ) {
 
 /**
  * 
- *  host: "us-east.connect.psdb.cloud",
-    database: "gaia-red",
-    user: "h7zj4t85121vvutk857l",
-    password: "pscale_pw_xO8bTlouQMC9sWYQQqDEQbJrln242pv2Dg1e5lbTxMZ",
+ *  const mysql = require('mysql2')
+const connection = mysql.createConnection('mysql://ulnx0fsv0dxtqkiz7yep:pscale_pw_zl0cx0imVKO0xbI0l2s0Wxhoy8Sytc0Bqrnv4FmOWql@us-east.connect.psdb.cloud/gaia-red?ssl={"rejectUnauthorized":true}')
+
  *
  * 
  * 
