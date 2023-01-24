@@ -1,8 +1,5 @@
-
-import mysql from "mysql2/promise";
-
-
-
+require('dotenv').config()
+const mysql = require('mysql2')
 
 export async function kuery(query:any, values = [] ) {
   const dbconnection = await mysql.createConnection(process.env.DATABASE_URL);
