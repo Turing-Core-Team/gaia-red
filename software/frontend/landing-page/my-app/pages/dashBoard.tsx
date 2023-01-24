@@ -212,7 +212,9 @@ const DashBoard = () => {
                     </div>
                     
                     <section className={styles.flexRow}>
-                        <div className={styles.fotoGrafico}>
+                        
+                    { /*
+                    <div className={styles.fotoGrafico}>
                             <Bar
                                 data={dataBarra}
                                 width='400px'
@@ -222,8 +224,13 @@ const DashBoard = () => {
                                     maintainAspectRatio: false
                                 }}
                             />
-                        </div>
+                            lo borramos pq ya no es necesario
+                             </div>
+                            */
+}
+                        
                         <div className={styles.fotoGrafico}>
+                            
                             <Line
                                 data={data}
                                 width='400px'
