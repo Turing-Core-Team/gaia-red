@@ -1,13 +1,11 @@
+
 import mysql from "mysql2/promise";
 
-export async function kuery(query:any, values = [] ) {
-  const dbconnection = await mysql.createConnection({
-    database: 'gaia-red',
-    username: 'h7zj4t85121vvutk857l',
-    host: 'us-east.connect.psdb.cloud',
-    password: 'pscale_pw_xO8bTlouQMC9sWYQQqDEQbJrln242pv2Dg1e5lbTxMZ'
 
-  });
+
+
+export async function kuery(query:any, values = [] ) {
+  const dbconnection = await mysql.createConnection(process.env.DATABASE_URL);
   //conexión con PlanetScale
   try {
     const [results] = await dbconnection.execute(query, values);
@@ -22,12 +20,11 @@ export async function kuery(query:any, values = [] ) {
 
 /**
  * 
- * 
- * host:'54.209.83.225',
-    database:'redGaia',
-    user:'juanma',
-    port:3306,
-    password:'sistemas1'
+ *  host: "us-east.connect.psdb.cloud",
+    database: "gaia-red",
+    user: "h7zj4t85121vvutk857l",
+    password: "pscale_pw_xO8bTlouQMC9sWYQQqDEQbJrln242pv2Dg1e5lbTxMZ",
+ *
  * 
  * 
  */
