@@ -29,14 +29,23 @@ const DashBoard = () => {
     const [dataTemp,setdataTemp] = useState<number[]>([-1]);
     const [dataHR,setdataHR] = useState<number[]>([-1]);
     const [dataD,setdataD] = useState<number[]>([-1]);
+    const [onChange,setChange] = useState<Boolean>(true)
     
     //traer datos de la db y guardarlos con useeffect
-    async function actualizarDatos(data:any) {
+    
+    async function getPageData(){
+        const apiUrlEndpoint = './api/getData';
+        const response = await fetch(apiUrlEndpoint)
+        const res = await response.json();
+        setdataResponse(res.reportes);
+        console.log('actualizando')
+        //actualizarPagina(dataResponse)
         let count:number 
         let arr:number[] = [-1];
         let arr2:number[] = [-1];
         let arr3:number[] = [-1];
-        data.map((reporte:any)=>{
+
+        dataResponse.map((reporte:any)=>{
             console.log('ejecutando')
             if(reporte.nombre=='Distancia'){
                 if(arr[0]==-1) arr[0] =reporte.valor;
@@ -54,6 +63,8 @@ const DashBoard = () => {
 
         });
         //borrando datos vacios:
+        //¿porque esta esto aqui?
+        
         arr.map((element)=>{
             if(element==-1)  arr[arr.indexOf(element)]= -1
         })
@@ -63,33 +74,31 @@ const DashBoard = () => {
         arr3.map((element)=>{
             if(element==-1)  arr3[arr3.indexOf(element)]= -1
         })
-        console.log('tu tu tu hermana')
+
+        
+        console.log('datos actualizados?')
         setdataD(arr);
         setdataHR(arr2);
         setdataTemp(arr3);
         //actualizamos la consulta
-     
-        
-    
-    }
-    async function getPageData(){
-        const apiUrlEndpoint = './api/getData';
-        const response = await fetch(apiUrlEndpoint)
-        const res = await response.json();
-        setdataResponse(res.reportes);
+        console.log('arreglo dst2:')
+        console.log(dataD);
+        console.log('arreglo t')
+        console.log(dataTemp);
+        console.log('arreglo hum:')
+        console.log(dataHR);
     }
     useEffect(
         ()=>{
+          if(dataHR[0] == -1 || dataD[0] == -1 || dataTemp[0] == -1){
             getPageData()
-        },[]
+          }
+          //this may work
+          
+        },
     );
         //como hacemos para que se actualice al instante?
-     async function actualizarPagina(data:any){
-        await getPageData();
-        setTimeout(() => {
-           actualizarDatos(data) 
-        },200);
-    }
+   
    
    
     
@@ -190,12 +199,12 @@ const DashBoard = () => {
                     </article>
                     {/*pq no se actualiza el dataResponse? */}
                     <section className={styles.flexRow1}>
-                            <Infodash {...[dataTemp[dataTemp.length-1].toString()+' C°', '/temperature.png', "Temperatura (C°)", '1']}></Infodash>
-                            <Infodash {...[dataHR[dataHR.length-1].toString()+'%', '/humedad.png', "H.Relativa (%)", '2']}></Infodash>
-                            <Infodash {...[dataD[dataD.length-1].toString(), '/brillo.png', "Brillo (on/off)", '4']}></Infodash> 
+                            <Infodash {...[`${dataTemp[dataTemp.length-1] == -1? '...':dataTemp[dataTemp.length-1]+"C°"} `, '/temperature.png', "Temperatura (C°)", '1']}></Infodash>
+                            <Infodash {...[`${dataHR[dataHR.length-1] == -1? '....':dataHR[dataHR.length-1]+"%"} `, '/humedad.png', "H.Relativa (%)", '2']}></Infodash>
+                            <Infodash {...[`${dataD[dataD.length-1] == -1? '...':dataD[dataD.length-1]} `, '/brillo.png', "Brillo (on/off)", '4']}></Infodash> 
                             <button  className={styles.botonDash} onClick={()=>
                            
-                                actualizarPagina(dataResponse)
+                                getPageData()
                                
                             
                             }>actualizar</button>
