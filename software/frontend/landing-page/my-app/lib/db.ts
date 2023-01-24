@@ -2,12 +2,13 @@ import mysql from "mysql2/promise";
 
 export async function kuery(query:any, values = [] ) {
   const dbconnection = await mysql.createConnection({
-    host:'54.209.83.225',
-    database:'redGaia',
-    user:'juanma',
-    port:3306,
-    password:'sistemas1'
+    database: 'gaia-red',
+    username: 'h7zj4t85121vvutk857l',
+    host: 'us-east.connect.psdb.cloud',
+    password: 'pscale_pw_xO8bTlouQMC9sWYQQqDEQbJrln242pv2Dg1e5lbTxMZ'
+
   });
+  //conexión con PlanetScale
   try {
     const [results] = await dbconnection.execute(query, values);
     //console.log(results);
