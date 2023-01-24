@@ -13,6 +13,11 @@ import { defaults } from "chart.js";
 import MobileNav from "../componentes/mobileNav";
 import Link from "next/link";
 
+/*
+pendiente: cambiar todo lo que sea de distancia por brillo
+resolver problema de que toca oprimir 2 veces el boton
+ */
+
 //esto se utiliza pq según entiendo al usar chart.js con react
 /*v4 of this library, just like Chart.js v3,
  is tree-shakable. It means that you need to import 
@@ -204,7 +209,12 @@ const DashBoard = () => {
                             <Infodash {...[`${dataD[dataD.length-1] == -1? '...':dataD[dataD.length-1]} `, '/brillo.png', "Brillo (on/off)", '4']}></Infodash> 
                             <button  className={styles.botonDash} onClick={()=>
                            
-                                getPageData()
+                              
+                                //opcion 1: espichar 2 veces
+                                //getPageData()
+                                //opcion 2: cargar la pagina
+                                window.location.reload()
+                              
                                
                             
                             }>actualizar</button>
