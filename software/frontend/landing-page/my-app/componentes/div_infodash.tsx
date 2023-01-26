@@ -19,7 +19,7 @@ const Infodash = (props: string[]) => {
                         <img className={styles.iconoDs} src={titulo}></img>
                         <h2>{numero}</h2>
                         <p>{texto}</p>
-                        <Link href={'reportes/'+reporte}><div className={styles.div_estilizado}>Detalles</div></Link>
+                        
                     </div>
                   
 
