@@ -19,4 +19,11 @@ export async function kuery(query:any, values = [] ) {
   }
 }
 
-
+/**
+ * mediciones
+value
+units
+variable
+ * 
+ * 
+ */
