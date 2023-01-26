@@ -7,8 +7,9 @@ export default async function handler(req:any,res:any){
             //intentamos hacer nuestra query
             const query:string = 
             //'SELECT nombre_variable AS nombre,valor_medicion AS valor FROM registros JOIN sensores ON registros.id_sensor=sensores.id_sensor JOIN variables  ON sensores.id_variable=variables.id_variable';
-            'SELECT * FROM reportes';
-            //'SELECT nombre_variable AS nombre,valor_medicion AS valor FROM registros JOIN sensores ON registros.id_sensor=sensores.id_sensor JOIN variables  ON sensores.id_variable=variables.id_variable'
+            'SELECT value as valor, variable as nombre FROM mediciones';
+            //'SELECT * FROM mediciones';
+            
             const values:string[] = [];
             //esta parte ejecuta nuestra consulta por medio de una funcion asincrona
             const data = await kuery(query,[]) ;

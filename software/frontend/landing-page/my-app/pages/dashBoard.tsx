@@ -52,18 +52,20 @@ const DashBoard = () => {
 
         dataResponse.map((reporte:any)=>{
             console.log('ejecutando')
-            if(reporte.nombre=='Distancia'){
+           if (reporte.nombre != null){
+            if(reporte.nombre.toLowerCase()=='brillo'){
                 if(arr[0]==-1) arr[0] =reporte.valor;
                 else arr.push(parseInt(reporte.valor))
             }
-            else if(reporte.nombre=='HR'){
+            else if(reporte.nombre.toLowerCase()=='hr'){
                 if(arr2[0]==-1) arr2[0] =reporte.valor;
                 else arr2.push(parseInt(reporte.valor))
             }
-            else if(reporte.nombre=='Temperatura'){
+            else if(reporte.nombre.toLowerCase()=='temp'){
                 if(arr3[0]==-1) arr3[0] =reporte.valor;
                 else arr3.push(parseInt(reporte.valor))
             }
+           }
             //pendiente, cambiar de string a number para las graficas
 
         });

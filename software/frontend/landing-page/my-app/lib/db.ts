@@ -19,20 +19,4 @@ export async function kuery(query:any, values = [] ) {
   }
 }
 
-/**
- * 
- *  const mysql = require('mysql2')
-const connection = mysql.createConnection('mysql://ulnx0fsv0dxtqkiz7yep:pscale_pw_zl0cx0imVKO0xbI0l2s0Wxhoy8Sytc0Bqrnv4FmOWql@us-east.connect.psdb.cloud/gaia-red?ssl={"rejectUnauthorized":true}')
 
- *
- * 
- * 
- */
-
-    /**
-     *  host:'localhost',
-    database:'prueba_gaia',
-    user:'root',
-    port:3306,
-    password:'toor'
-     */
