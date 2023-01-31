@@ -151,14 +151,35 @@ const DashBoard = () => {
             borderWidth: 1
         }]
     };
-
+  /*
     const data = {
-        labels: ['1', '2', '3', '4', '5', '6', '7'],
+        labels: ['1', '2', '3', '4', '5', '6', '7','8','9','10','11','12','13','14','15','16'],
+        datasets: [
+          {
+            label: 'Temperatura',
+                backgroundColor: 'rgba(75,192,192,0.4)',
+                borderColor: 'rgba(75,192,192,1)',
+                data: dataTemp
+          },
+          {
+            label: 'Humedad Relativa',
+            backgroundColor: 'rgb(250,128,114)',
+            borderColor: 'rgb(250,128,114)',
+            data: dataHR
+            
+          }
+        ]
+      };
+*/
+   
+      
+    const data = {
+        labels: ['1', '2', '3', '4', '5', '6', '7','8','9','10','11','12','13','14','15','16'],
         datasets: [
             {
                 //para cada linea se crea un dataSet
                 label: 'Temperatura',
-                
+                yAxisID: 'y',
                 fill: false,
                 lineTension: 0.1,
                 backgroundColor: 'rgba(75,192,192,0.4)',
@@ -169,7 +190,7 @@ const DashBoard = () => {
             {
                 //para cada linea se crea un dataSet
                 label: 'Humedad Relativa',
-                
+                yAxisID: 'y1',
                 fill: false,
                 lineTension: 0.1,
                 backgroundColor: 'rgb(250,128,114)',
@@ -178,6 +199,7 @@ const DashBoard = () => {
             }
         ]
     };
+    
 
 
 // val_inicial = [1,2,3]
@@ -258,7 +280,22 @@ const DashBoard = () => {
                                 height='400px'
                                 options={{
                                     responsive: true,
-                                    maintainAspectRatio: false
+                                    maintainAspectRatio: false,
+                                    scales: {
+                                        y: {
+                                          type: 'linear' as const,
+                                          display: true,
+                                          position: 'left' as const,
+                                        },
+                                        y1: {
+                                          type: 'linear' as const,
+                                          display: true,
+                                          position: 'right' as const,
+                                          grid: {
+                                            drawOnChartArea: false,
+                                          },
+                                        },
+                                      },
                                 }}
                             />
                         </div>
